@@ -1,0 +1,6 @@
+{
+  "name": "Neon Snake",
+  "description": "An electric retro-futuristic arcade game featuring smooth mechanics, glowing neon aesthetics, and multiple game modes including Classic, Arcade, Zen, and Challenges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

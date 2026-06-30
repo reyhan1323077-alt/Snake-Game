@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-surface: #0b1326;
+  --color-surface-dim: #0b1326;
+  --color-surface-bright: #31394d;
+  --color-surface-container-lowest: #060e20;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container: #171f33;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #b9ccb2;
+  --color-outline: #84967e;
+  --color-outline-variant: #3b4b37;
+
+  --color-primary: #ebffe2;
+  --color-on-primary: #003907;
+  --color-primary-container: #00ff41;
+  --color-on-primary-container: #007117;
+
+  --color-secondary: #ffb1c3;
+  --color-on-secondary: #66002c;
+  --color-secondary-container: #ff4b89;
+  --color-on-secondary-container: #590026;
+
+  --color-tertiary-fixed-dim: #00daf3;
+}
+
+@layer utilities {
+  /* Neon glows & borders matches screen visual styles */
+  .neon-border-primary {
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3), inset 0 0 15px rgba(0, 255, 65, 0.3);
+    border: 1px solid #00ff41;
+  }
+  
+  .neon-border-pink {
+    box-shadow: 0 0 15px rgba(255, 75, 137, 0.3), inset 0 0 15px rgba(255, 75, 137, 0.3);
+    border: 1px solid #ff4b89;
+  }
+
+  .neon-border-cyan {
+    box-shadow: 0 0 15px rgba(0, 218, 243, 0.3), inset 0 0 15px rgba(0, 218, 243, 0.3);
+    border: 1px solid #00daf3;
+  }
+
+  .neon-border-yellow {
+    box-shadow: 0 0 15px rgba(255, 223, 0, 0.3), inset 0 0 15px rgba(255, 223, 0, 0.3);
+    border: 1px solid #ffdf00;
+  }
+
+  .neon-glow-primary {
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.45);
+  }
+
+  .neon-glow-secondary {
+    box-shadow: 0 0 20px rgba(255, 75, 137, 0.45);
+  }
+
+  .neon-glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 218, 243, 0.45);
+  }
+
+  .neon-glow-yellow {
+    box-shadow: 0 0 20px rgba(255, 223, 0, 0.45);
+  }
+
+  /* Glassmorphism for HUD and Overlays */
+  .glass-panel {
+    background: rgba(11, 19, 38, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  canvas {
+    image-rendering: pixelated;
+  }
+}
+
+@keyframes pulse-red {
+  0%, 100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 2px #ff4b89); }
+  50% { transform: scale(1.1); opacity: 0.85; filter: drop-shadow(0 0 8px #ff4b89); }
+}
+
+.food-pulse {
+  animation: pulse-red 0.8s infinite ease-in-out;
+}
